@@ -4,12 +4,15 @@
 
 namespace SimAntics
 {
-    public interface IVM
+    public enum Direction
     {
-        void Init();
-        void Reset();
-        void Update();
-        void Tick();
-        void InternalTick(uint tickId);
+        NORTH,
+        NORTHEAST,
+        EAST,
+        SOUTHEAST,
+        SOUTH,
+        SOUTHWEST,
+        WEST,
+        NORTHWEST
     }
 }

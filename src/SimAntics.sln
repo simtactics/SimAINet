@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimAntics", "SimAntics\SimAntics.csproj", "{6B758449-9D5A-456A-A733-31B7841E538A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimAntics.Tests", "SimAntics.Tests\SimAntics.Tests.csproj", "{4B7461A4-982A-4D89-92E3-E4D4A3EC85FB}"
@@ -18,5 +19,10 @@ Global
 		{4B7461A4-982A-4D89-92E3-E4D4A3EC85FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B7461A4-982A-4D89-92E3-E4D4A3EC85FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B7461A4-982A-4D89-92E3-E4D4A3EC85FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.StandardHeader = $1
+		$1.Text = @This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.\nIf a copy of the MPL was not distributed with this file, You can obtain one at\nhttp://mozilla.org/MPL/2.0/.
 	EndGlobalSection
 EndGlobal
