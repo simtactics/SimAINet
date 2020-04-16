@@ -6,9 +6,9 @@
 #endif
 
 using System.Collections.Generic;
-using SimAntics.Engine.Entities;
+using SimAI.Engine.Entities;
 
-namespace SimAntics.Engine
+namespace SimAI.Engine
 {
     /// <summary>
     /// Compatibility class 
@@ -44,7 +44,7 @@ namespace SimAntics.Engine
         // Don't need to be serialized.
         public int DialogCooldown = 0;
         // the number of ticks that have executed so far this frame. If this exceeds the allowed max,
-        // the thread resets, and a SimAntics Error pops up.
+        // the thread resets, and a SimAI Error pops up.
         public int TicksThisFrame = 0;
         // the maximum number of primitives a thread can execute in one frame. Tweak appropriately.
 

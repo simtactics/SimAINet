@@ -3,10 +3,10 @@
 // http://mozilla.org/MPL/2.0/.
 using System;
 using System.Collections.Generic;
-using SimAntics.Engine;
-using SimAntics.Engine.Entities;
+using SimAI.Engine;
+using SimAI.Engine.Entities;
 
-namespace SimAntics
+namespace SimAI
 {
     /// <summary>
     /// VM is an abstract class that contains the 

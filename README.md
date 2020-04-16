@@ -1,19 +1,19 @@
-# SimAntics
+# SimAI
 
-SimAntics is a port of FreeSO's reimplementation to .NET Standard.
+SimAI is a port of FreeSO's reimplementation to .NET Standard.
 
 ## Build Status
 
-| Service | Status                                                                                                                                                   |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Github  | [![Build](https://img.shields.io/github/workflow/status/simtactics/SimAntics/build/master?logo=github)](https://github.com/simtactics/SimAntics/actions) |
+| Service | Status                                                                                                                                           |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Github  | [![Build](https://img.shields.io/github/workflow/status/simtactics/SimAI/build/master?logo=github)](https://github.com/simtactics/SimAI/actions) |
 
 ## Authors
 
 - **Anthony Foxclaw** - _Maintainer_ - [tonytins](https://github.com/tonytins)
 - **Rhys Simpson** - _Original work_ - [riperiperi](https://github.com/riperiperi)
 
-See also the list of [contributors](https://github.com/simtactics/SimAntics/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/simtactics/SimAI/contributors) who participated in this project.
 
 ## License
 

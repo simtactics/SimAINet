@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SimAntics.Engine;
+using SimAI.Engine;
 
-namespace SimAntics
+namespace SimAI
 {
     public class VMSimanticsException : Exception
     {

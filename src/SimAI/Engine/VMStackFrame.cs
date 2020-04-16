@@ -1,10 +1,11 @@
 ﻿// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at
 // http://mozilla.org/MPL/2.0/.
-using SimAntics.Engine.Entities;
-using SimAntics.Marshals;
 
-namespace SimAntics.Engine
+using SimAI.Engine.Entities;
+using SimAI.Marshals;
+
+namespace SimAI.Engine
 {
     /// <summary>
     /// Holds information about the execution of a routine

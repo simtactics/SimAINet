@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using Xunit;
 
-namespace SimAntics.Tests
+namespace SimAI.Tests
 {
     public class UnitTest1
     {

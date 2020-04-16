@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimAntics", "SimAntics\SimAntics.csproj", "{6B758449-9D5A-456A-A733-31B7841E538A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimAI", "SimAI\SimAI.csproj", "{6B758449-9D5A-456A-A733-31B7841E538A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimAntics.Tests", "SimAntics.Tests\SimAntics.Tests.csproj", "{4B7461A4-982A-4D89-92E3-E4D4A3EC85FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimAI.Tests", "SimAI.Tests\SimAI.Tests.csproj", "{4B7461A4-982A-4D89-92E3-E4D4A3EC85FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

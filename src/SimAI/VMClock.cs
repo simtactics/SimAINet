@@ -3,7 +3,7 @@
 // http://mozilla.org/MPL/2.0/.
 using System;
 
-namespace SimAntics
+namespace SimAI
 {
     public class VMClock
     {

@@ -4,7 +4,7 @@
 using System;
 using System.IO;
 
-namespace SimAntics.Marshals
+namespace SimAI.Marshals
 {
     public class VMStackFrameMarshal
     {
