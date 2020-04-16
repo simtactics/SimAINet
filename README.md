@@ -1,6 +1,6 @@
 # SimAI
 
-SimAI is a port of FreeSO's reimplementation to .NET Standard.
+SimAI is a port of FreeSO's reimplementation of SimAntics to .NET Standard.
 
 ## Build Status
 
