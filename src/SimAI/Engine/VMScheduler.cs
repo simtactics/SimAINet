@@ -18,10 +18,7 @@ public class VMScheduler
  public bool RunningNow { get; set; }
 
 
- public VMScheduler(VM vm)
- {
-  VM = vm;
- }
+ public VMScheduler(VM vm) => VM = vm;
 
  public void ScheduleTickIn(VMEntity _ent, uint delay)
  {

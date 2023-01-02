@@ -168,10 +168,6 @@ public class VMStackFrame
            ActionTree = input.ActionTree;
        }
 
-       public VMStackFrame(VMStackFrameMarshal input, VMContext context, VMThread thread)
-       {
-           Thread = thread;
-           // Load(input, context);
-       }
-       #endregion
-   }
+ public VMStackFrame(VMStackFrameMarshal input, VMContext context, VMThread thread) => Thread = thread;// Load(input, context);
+ #endregion
+}

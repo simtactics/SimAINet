@@ -19,7 +19,7 @@ public class VMStackFrameMarshal
  public int Version { get; set; }
 
  public VMStackFrameMarshal() { }
- public VMStackFrameMarshal(int version) { Version = version; }
+ public VMStackFrameMarshal(int version) => Version = version;
 
  public virtual void Deserialize(BinaryReader reader)
  {

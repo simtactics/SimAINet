@@ -3,9 +3,9 @@
 // http://mozilla.org/MPL/2.0/.
 namespace SimAI.Tests;
 
-   public class VMTest
-   {
-       public VMTest()
-       {
-       }
-   }
+public class VMTest
+{
+ public VMTest()
+ {
+ }
+}
