@@ -21,6 +21,6 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet }}
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore src
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build src --configuration Release --no-restore
