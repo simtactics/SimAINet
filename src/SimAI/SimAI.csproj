@@ -1,13 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>SimAntics</RootNamespace>
-    </PropertyGroup>
+ <PropertyGroup>
+  <TargetFramework>net6.0</TargetFramework>
+  <RootNamespace>SimAntics</RootNamespace>
+  <Nullable>enable</Nullable>
+  <ImplicitUsings>enable</ImplicitUsings>
+  <Authors>Tony Bark</Authors>
+ </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Entities\" />
-      <Folder Include="Interfaces\" />
-      <Folder Include="Marshals\" />
-    </ItemGroup>
+ <ItemGroup>
+  <Folder Include="Engine\Entities\" />
+  <Folder Include="Interfaces\" />
+  <Folder Include="Marshals\" />
+ </ItemGroup>
 </Project>

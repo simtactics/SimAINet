@@ -1,0 +1,26 @@
+name: .NET
+
+on:
+  push:
+    branches: [main, master, "releases/**"]
+  pull_request:
+    branches: [main, master, "releases/**"]
+jobs:
+  build:
+    timeout-minutes: 15
+    continue-on-error: true
+    runs-on: ${{ matrix.platforms }}
+    strategy:
+      matrix:
+        dotnet: ["6.0.x"]
+        platforms: ["ubuntu-latest", "windows-latest", "macos-latest"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore

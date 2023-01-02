@@ -2,178 +2,176 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at
 // http://mozilla.org/MPL/2.0/.
 
-using SimAI.Engine.Entities;
-using SimAI.Marshals;
+using SimAntics.Engine.Entities;
 
-namespace SimAI.Engine
-{
-    /// <summary>
-    /// Holds information about the execution of a routine
-    /// </summary>
-    public class VMStackFrame
-    {
-        public VMStackFrame() { }
+namespace SimAI.Engine;
 
-        /** Thread executing this routine **/
-        public VMThread Thread;
+/// <summary>
+/// Holds information about the execution of a routine
+/// </summary>
+public class VMStackFrame
+   {
+       public VMStackFrame() { }
 
-        /** Routine that this context relates to **/
-        // public VMRoutine Routine;
+       /** Thread executing this routine **/
+       public VMThread Thread;
 
-        /** Current instruction **/
-        public ushort InstructionPointer;
+       /** Routine that this context relates to **/
+       // public VMRoutine Routine;
 
-        /** The object who executed this behavior **/
-        public VMEntity Caller;
+       /** Current instruction **/
+       public ushort InstructionPointer;
 
-        /** The object the code is running on **/
-        public VMEntity Callee;
+       /** The object who executed this behavior **/
+       public VMEntity Caller;
 
-        /** An object selected by the code to perform operations on. **/
-        public VMEntity StackObject
-        {
-            get { return _StackObject; }
-            set
-            {
-                _StackObject = value;
-                _StackObjectID = value?.ObjectID ?? 0;
-            }
-        }
-        public short StackObjectID
-        {
-            get { return _StackObjectID; }
-            set
-            {
-                _StackObjectID = value;
-                _StackObject = VM.GetObjectById(value);
-            }
-        }
+       /** The object the code is running on **/
+       public VMEntity Callee;
 
-        VMEntity _StackObject;
-        public short _StackObjectID;
+       /** An object selected by the code to perform operations on. **/
+       public VMEntity StackObject
+       {
+           get { return _StackObject; }
+           set
+           {
+               _StackObject = value;
+               _StackObjectID = value?.ObjectID ?? 0;
+           }
+       }
+       public short StackObjectID
+       {
+           get { return _StackObjectID; }
+           set
+           {
+               _StackObjectID = value;
+               _StackObject = VM.GetObjectById(value);
+           }
+       }
 
-        /** If true, this stack frame is not a subroutine. Return with a continue. **/
-        public bool DiscardResult;
+       VMEntity _StackObject;
+       public short _StackObjectID;
 
-        /** Indicates that the current stack frame is part of an action tree.
-         ** Set by "idle for input, allow push", when an interaction is selected.
-         ** Used to stop recursive interactions, is only false when within "main".
-         **/
-        public bool ActionTree;
+       /** If true, this stack frame is not a subroutine. Return with a continue. **/
+       public bool DiscardResult;
 
-        /** Used to get strings and other resources (for primitives) from the code owner, as it may not be the callee but instead a semiglobal or global. **/
-        //public GameIffResource ScopeResource
-        //{
-        //    get
-        //    {
-        //        return CodeOwner.Resource;
-        //    }
-        //}
+       /** Indicates that the current stack frame is part of an action tree.
+        ** Set by "idle for input, allow push", when an interaction is selected.
+        ** Used to stop recursive interactions, is only false when within "main".
+        **/
+       public bool ActionTree;
 
-        //public GameObject CodeOwner;
-        /**
-         * Routine locals
-         */
-        public short[] Locals;
+       /** Used to get strings and other resources (for primitives) from the code owner, as it may not be the callee but instead a semiglobal or global. **/
+       //public GameIffResource ScopeResource
+       //{
+       //    get
+       //    {
+       //        return CodeOwner.Resource;
+       //    }
+       //}
 
-        /**
-         * Arguments
-         */
-        public short[] Args;
+       //public GameObject CodeOwner;
+       /**
+        * Routine locals
+        */
+       public short[] Locals;
 
-        //public GameObjectResource CallerPrivate
-        //{
-        //    get
-        //    {
-        //        return Caller.Object.Resource;
-        //    }
-        //}
+       /**
+        * Arguments
+        */
+       public short[] Args;
 
-        //public GameObjectResource CalleePrivate
-        //{
-        //    get
-        //    {
-        //        return Callee.Object.Resource;
-        //    }
-        //}
+       //public GameObjectResource CallerPrivate
+       //{
+       //    get
+       //    {
+       //        return Caller.Object.Resource;
+       //    }
+       //}
 
-        //public GameObjectResource StackObjPrivate
-        //{
-        //    get
-        //    {
-        //        return StackObject.Object.Resource;
-        //    }
-        //}
+       //public GameObjectResource CalleePrivate
+       //{
+       //    get
+       //    {
+       //        return Callee.Object.Resource;
+       //    }
+       //}
 
-        //public GameGlobal Global
-        //{
-        //    get
-        //    {
-        //        return Thread.Context.Globals;
-        //    }
-        //}
+       //public GameObjectResource StackObjPrivate
+       //{
+       //    get
+       //    {
+       //        return StackObject.Object.Resource;
+       //    }
+       //}
 
-        public VM VM
-        {
-            get
-            {
-                return Thread.Context.VM;
-            }
-        }
+       //public GameGlobal Global
+       //{
+       //    get
+       //    {
+       //        return Thread.Context.Globals;
+       //    }
+       //}
 
-        /** Utilities **/
-        //public VMInstruction GetCurrentInstruction()
-        //{
-        //    return Routine.Instructions[InstructionPointer];
-        //}
+       public VM VM
+       {
+           get
+           {
+               return Thread.Context.VM;
+           }
+       }
 
-        //public T GetCurrentOperand<T>()
-        //{
-        //    return (T)GetCurrentInstruction().Operand;
-        //}
+       /** Utilities **/
+       //public VMInstruction GetCurrentInstruction()
+       //{
+       //    return Routine.Instructions[InstructionPointer];
+       //}
 
-        #region VM Marshalling Functions
-        //public virtual VMStackFrameMarshal Save()
-        //{
-        //    return new VMStackFrameMarshal
-        //    {
-        //        RoutineID = Routine?.ID ?? 0,
-        //        InstructionPointer = InstructionPointer,
-        //        Caller = (Caller == null) ? (short)0 : Caller.ObjectID,
-        //        Callee = (Callee == null) ? (short)0 : Callee.ObjectID,
-        //        StackObject = StackObjectID,
-        //        CodeOwnerGUID = CodeOwner.OBJ.GUID,
-        //        Locals = (short[])Locals?.Clone(),
-        //        Args = (short[])Args?.Clone(),
-        //        DiscardResult = DiscardResult,
-        //        ActionTree = ActionTree,
-        //    };
-        //}
+       //public T GetCurrentOperand<T>()
+       //{
+       //    return (T)GetCurrentInstruction().Operand;
+       //}
 
-        public virtual void Load(VMStackFrameMarshal input, VMContext context)
-        {
-            // CodeOwner = GameContent.Get.WorldObjects.Get(input.CodeOwnerGUID);
+       #region VM Marshalling Functions
+       //public virtual VMStackFrameMarshal Save()
+       //{
+       //    return new VMStackFrameMarshal
+       //    {
+       //        RoutineID = Routine?.ID ?? 0,
+       //        InstructionPointer = InstructionPointer,
+       //        Caller = (Caller == null) ? (short)0 : Caller.ObjectID,
+       //        Callee = (Callee == null) ? (short)0 : Callee.ObjectID,
+       //        StackObject = StackObjectID,
+       //        CodeOwnerGUID = CodeOwner.OBJ.GUID,
+       //        Locals = (short[])Locals?.Clone(),
+       //        Args = (short[])Args?.Clone(),
+       //        DiscardResult = DiscardResult,
+       //        ActionTree = ActionTree,
+       //    };
+       //}
 
-            // Routine = null;
-            //if (input.RoutineID >= 8192) Routine = (VMRoutine)ScopeResource.SemiGlobal.GetRoutine(input.RoutineID);
-            //else if (input.RoutineID >= 4096) Routine = (VMRoutine)ScopeResource.GetRoutine(input.RoutineID);
-            //else Routine = (VMRoutine)Global.Resource.GetRoutine(input.RoutineID);
+       public virtual void Load(VMStackFrameMarshal input, VMContext context)
+       {
+           // CodeOwner = GameContent.Get.WorldObjects.Get(input.CodeOwnerGUID);
 
-            InstructionPointer = input.InstructionPointer;
-            Caller = context.VM.GetObjectById(input.Caller);
-            Callee = context.VM.GetObjectById(input.Callee);
-            StackObjectID = input.StackObject;
-            Locals = input.Locals;
-            Args = input.Args;
-            DiscardResult = input.DiscardResult;
-            ActionTree = input.ActionTree;
-        }
+           // Routine = null;
+           //if (input.RoutineID >= 8192) Routine = (VMRoutine)ScopeResource.SemiGlobal.GetRoutine(input.RoutineID);
+           //else if (input.RoutineID >= 4096) Routine = (VMRoutine)ScopeResource.GetRoutine(input.RoutineID);
+           //else Routine = (VMRoutine)Global.Resource.GetRoutine(input.RoutineID);
 
-        public VMStackFrame(VMStackFrameMarshal input, VMContext context, VMThread thread)
-        {
-            Thread = thread;
-            // Load(input, context);
-        }
-        #endregion
-    }
-}
+           InstructionPointer = input.InstructionPointer;
+           Caller = context.VM.GetObjectById(input.Caller);
+           Callee = context.VM.GetObjectById(input.Callee);
+           StackObjectID = input.StackObject;
+           Locals = input.Locals;
+           Args = input.Args;
+           DiscardResult = input.DiscardResult;
+           ActionTree = input.ActionTree;
+       }
+
+       public VMStackFrame(VMStackFrameMarshal input, VMContext context, VMThread thread)
+       {
+           Thread = thread;
+           // Load(input, context);
+       }
+       #endregion
+   }
