@@ -6,11 +6,11 @@ SimAI is a port of FreeSO's reimplementation of SimAntics to .NET Standard.
 
 | Service | Status                                                                                                                                           |
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Github  | [![Build](https://img.shields.io/github/workflow/status/simtactics/SimAI/build/master?logo=github)](https://github.com/simtactics/SimAI/actions) |
+| Github  | [![Build](https://img.shields.io/github/workflow/status/simtactics/SimAI/build/main?logo=github)](https://github.com/simtactics/SimAI/actions) |
 
 ## Authors
 
-- **Anthony Foxclaw** - _Maintainer_ - [tonytins](https://github.com/tonytins)
+- **Tony Bark** - _Maintainer_ - [tonytins](https://github.com/tonytins)
 - **Rhys Simpson** - _Original work_ - [riperiperi](https://github.com/riperiperi)
 
 See also the list of [contributors](https://github.com/simtactics/SimAI/contributors) who participated in this project.
