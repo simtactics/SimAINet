@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using SimAI;
 using Xunit;
 
 namespace SimAntics.Tests;
