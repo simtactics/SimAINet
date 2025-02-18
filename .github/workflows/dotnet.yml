@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.platforms }}
     strategy:
       matrix:
-        dotnet: ["6.0.x"]
+        dotnet: ["8.0.x"]
         platforms: ["ubuntu-latest", "windows-latest", "macos-latest"]
     steps:
       - uses: actions/checkout@v2
