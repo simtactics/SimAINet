@@ -1,10 +1,10 @@
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at
 // http://mozilla.org/MPL/2.0/.
-namespace SimAI;
+namespace SimAntics;
 
 public class VMContext
 {
- public static bool useWorld = true;
- public VM? VM { get; set; }
+    public static bool useWorld = true;
+    public VM? VM { get; set; }
 }

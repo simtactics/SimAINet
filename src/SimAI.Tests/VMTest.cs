@@ -5,7 +5,7 @@ namespace SimAI.Tests;
 
 public class VMTest
 {
- public VMTest()
- {
- }
+    public VMTest()
+    {
+    }
 }
